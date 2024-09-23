@@ -388,7 +388,10 @@ else()
 
 endif()
 
-if (NOT pythia8)
+if (NOT ROOT_pythia6_FOUND)
+  set(pythia_veto pythia/pythiaExample.C)
+endif()
+if (NOT ROOT_pythia8_FOUND)
   set(pythia_veto evegen/evegen_000_pythia8.C)
 else()
   if("$ENV{PYTHIA8}" STREQUAL "")
